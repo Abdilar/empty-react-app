@@ -1,4 +1,5 @@
 /*
-* Functions are defined here. It's global function
+* Functions are defined here. They are global functions
 * */
 
+import { toast } from "react-toastify";
