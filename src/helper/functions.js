@@ -38,3 +38,18 @@ export function invalidFormWarning(message = null) {
 export function getRandomNumber(number = 1) {
   return Math.floor(Math.random() * number);
 }
+
+/*
+* Convert illegible texts into legible texts
+* @param {String} text - The text that needs to be converted
+* */
+export function slugify(text = "") {
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/&/g, '-and-') // Replace & with 'and'
+    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+    .replace(/--+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, '')
+}
+
