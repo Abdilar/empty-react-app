@@ -31,3 +31,10 @@ export function invalidFormWarning(message = null) {
   toast.warn(message ? message : "Please input fields correctly");
 }
 
+/*
+* Get random number
+* @param {Number} number - A number that must be generated randomly
+* */
+export function getRandomNumber(number = 1) {
+  return Math.floor(Math.random() * number);
+}
