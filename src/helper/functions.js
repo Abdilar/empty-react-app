@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import errorMessage from "../assets/data/error";
 
 /*
-* Show Error toase message
+* Show error toast message
 * @param {Object} error - The API error response
 * */
 export function errorHandler(error) {
@@ -21,5 +21,13 @@ export function errorHandler(error) {
   } else {
     toast.error(errorMessage["unknown"]);
   }
+}
+
+/*
+* Show invalid form warning message
+* @param {String} message - The message text that must be displayed
+* */
+export function invalidFormWarning(message = null) {
+  toast.warn(message ? message : "Please input fields correctly");
 }
 
