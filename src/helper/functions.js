@@ -1,7 +1,7 @@
 /*
 * Functions are defined here. They are global functions
 * */
-
+import moment from "moment";
 import { toast } from "react-toastify";
 import errorMessage from "../assets/data/error";
 import * as environments from "../environments/environment";
@@ -63,3 +63,11 @@ export function getImage(id, size = "d04_standard"){
   return `${environments.BASE_URL}/file/${size}/${id}`;
 }
 
+/*
+* Show time ago format
+* @param {number} timestamp - The timestamp
+* @param {boolean} thousand - if has thousand not set it
+* */
+export function timeAgo(timestamp, thousand = true) {
+  return moment(timestamp * (thousand ? 1 : 1000)).fromNow();
+}
