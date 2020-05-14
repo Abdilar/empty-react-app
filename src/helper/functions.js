@@ -4,6 +4,7 @@
 
 import { toast } from "react-toastify";
 import errorMessage from "../assets/data/error";
+import * as environments from "../environments/environment";
 
 /*
 * Show error toast message
@@ -51,5 +52,14 @@ export function slugify(text = "") {
     .replace(/--+/g, '-') // Replace multiple - with single -
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, '')
+}
+
+/*
+* Get images from the server
+* @param {Number} id - The image ID
+* @param {String} size - The image size
+* */
+export function getImage(id, size = "d04_standard"){
+  return `${environments.BASE_URL}/file/${size}/${id}`;
 }
 
