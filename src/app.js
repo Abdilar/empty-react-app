@@ -10,10 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 import './assets/styles/global.scss';
 
 const App = () => (
-  <React.Fragment>
-    <ReduxProvider store={store}>
-      <AppRouting />
-    </ReduxProvider>
+  <ReduxProvider store={store}>
+    <AppRouting />
     <ToastContainer
         autoClose={5000}
         position={toast.POSITION.TOP_CENTER}
@@ -23,7 +21,7 @@ const App = () => (
         draggable={false}
         pauseOnHover
     />
-  </React.Fragment>
+  </ReduxProvider>
 );
 
 ReactDOM.render(<App />, document.getElementById('app'));
