@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider as ReduxProvider } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
-import AppRouting from './app.route';
+import AppRouting from './route/app.route';
 import store from "./redux/store";
 
 import 'normalize.css/normalize.css';
