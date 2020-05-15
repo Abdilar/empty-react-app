@@ -7,8 +7,8 @@ const AppRouting = () => (
   <BrowserRouter>
     <Header />
     <Switch>
-        <Route path={'/'} component={Pages.HomePage} exact />
-        <Route component={Pages.NotFoundPage} />
+      <Route path={'/'} component={Pages.HomePage} exact />
+      <Route component={Pages.NotFoundPage} />
     </Switch>
   </BrowserRouter>
 );
