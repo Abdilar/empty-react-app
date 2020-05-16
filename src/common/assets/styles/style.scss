@@ -1,0 +1,31 @@
+@import "mixins/index";
+@import "components/index";
+
+body {
+  @include  font-family();
+}
+
+h1 {
+  font-size: 1.8rem !important;
+  @include tablet {
+    font-size: 1.5rem !important;
+  }
+
+  @include large-mobile{
+    font-size: 1.3rem !important;
+  }
+  @include mobile{
+    font-size: 1.2rem !important;
+  }
+  @include small-mobile {
+    font-size: 1.08rem !important;
+  }
+}
+
+p, span {
+  @include font-family('light');
+}
+
+.uk-text-bold {
+  @include font-family("bold");
+}

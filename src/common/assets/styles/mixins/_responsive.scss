@@ -1,0 +1,46 @@
+@mixin small-mobile { @media (max-width: #{$screen-xs}) {@content;} }
+@mixin mobile { @media (min-width: #{$screen-xs + 1}) and (max-width: #{$screen-sm}) {@content;} }
+@mixin large-mobile { @media (min-width: #{$screen-sm + 1}) and (max-width: #{$screen-md}) {@content;} }
+@mixin tablet { @media (min-width: #{$screen-md + 1}) and (max-width: #{$screen-lg}) {@content;} }
+@mixin small-laptop { @media (min-width: #{$screen-lg + 1}) and (max-width: #{$screen-xl}) {@content;} }
+@mixin laptop { @media (min-width: #{$screen-xl + 1}) and (max-width: #{$screen-xxl}) {@content;} }
+@mixin large-laptop { @media (min-width: #{$screen-xxl + 1}) {@content;} }
+
+@mixin just-laptop { @media (min-width: #{$screen-lg + 1}) {@content;} }
+@mixin just-mobile { @media (max-width: #{$screen-md}) {@content;} }
+@mixin just-mobile-tablet { @media (max-width: #{$screen-lg}) {@content;} }
+@mixin just-tablet-laptop { @media (min-width: #{$screen-md + 1}) {@content;} }
+
+@mixin ipad-pro-portrait {
+  @media (min-width: #{$screen-lg + 1}) and (max-width: #{$screen-xl}) {
+    @media (min-height: #{$screen-xl + 1}) and (max-height: #{$screen-xxl}) {@content;}
+  }
+}
+
+@mixin ipad-pro-landscape {
+  @media (min-width: #{$screen-xl + 1}) and (max-width: #{$screen-xxl}) {
+    @media (min-height: #{$screen-lg + 1}) and (max-height: #{$screen-xl}) {@content;}
+  }
+}
+
+// LANDSCAPE MODE
+@mixin mobile-tablet-landscape {
+  @media screen and (max-width: $screen-xl) and (orientation : landscape) {@content;}
+}
+@mixin mobile-landscape {
+  @media screen and (min-width: $screen-md + 1) and (max-width: $screen-lg) and (orientation : landscape) {@content;}
+}
+@mixin small-mobile-landscape {
+  @media screen and (max-width: $screen-md) and (orientation : landscape) {@content;}
+}
+
+@mixin screen-xs { @media (min-width: $screen-xs) {@content;} }
+@mixin screen-sm { @media (min-width: $screen-sm) {@content;} }
+@mixin screen-md { @media (min-width: $screen-md) {@content;} }
+@mixin screen-lg { @media (min-width: $screen-lg) {@content;} }
+@mixin screen-xl { @media (min-width: $screen-xl) {@content;} }
+@mixin screen-xxl { @media (min-width: $screen-xxl) {@content;} }
+
+@mixin between($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {@content;}
+}

@@ -1,0 +1,22 @@
+$base_path: '../../fonts';
+$path: 'iransans';
+$name: 'IranSans';
+$type: 'woff';
+$format: 'woff';
+
+$src: (
+  regular: 'url(#{$base_path}/#{$path}/#{$name}.#{$type}) format(#{$format})',
+  light: 'url(#{$base_path}/#{$path}/#{$name}Light.#{$type}) format(#{$format})',
+  bold: 'url(#{$base_path}/#{$path}/#{$name}Bold.#{$type}) format(#{$format})'
+);
+
+@each $var in map-keys($map: $src) {
+  @font-face {
+    font-family: '#{$name}-#{$var}';
+    src: map-get($map: $src, $key: $var);
+  }
+}
+
+@mixin font-family($type: 'regular') {
+  font-family: '#{$name}-#{$type}', sans-serif !important;
+}
