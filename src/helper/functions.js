@@ -3,8 +3,8 @@
 * */
 import moment from "moment";
 import { toast } from "react-toastify";
-import errorMessage from "../assets/data/error";
-import * as environments from "../environments/environment";
+import errorMessage from "../asset/data/error";
+import * as environments from "../environment/environment";
 
 /*
 * Show error toast message

@@ -1,6 +1,6 @@
 import http from "../helper/http";
 import * as urls from "../config/urls";
-import { BASE_URL } from "../environments/environment";
+import { BASE_URL } from "../environment/environment";
 
 export default {
   login(loginData) {

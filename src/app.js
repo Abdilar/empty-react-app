@@ -7,7 +7,7 @@ import store from "./redux/store";
 
 import 'normalize.css/normalize.css';
 import "react-toastify/dist/ReactToastify.css";
-import './assets/styles/global.scss';
+import './asset/styles/global.scss';
 
 const App = () => (
   <ReduxProvider store={store}>

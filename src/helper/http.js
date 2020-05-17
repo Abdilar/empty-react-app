@@ -2,7 +2,7 @@
 * Http interceptor is defined here
 * */
 import axios from "axios";
-import * as environments from "../environments/environment";
+import * as environments from "../environment/environment";
 import * as variables from "../config/variables";
 import * as functions from "./functions";
 
