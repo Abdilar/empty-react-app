@@ -22,6 +22,10 @@ module.exports = {
         loader: "babel-loader",
         include: PATH.join(__dirname, '..', 'src'),
         exclude: /node_modules/
+      },
+      {
+        test: /\.s?css$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
