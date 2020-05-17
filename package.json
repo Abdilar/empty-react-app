@@ -36,7 +36,6 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "babel-polyfill": "^6.26.0",
     "moment": "^2.25.3",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
