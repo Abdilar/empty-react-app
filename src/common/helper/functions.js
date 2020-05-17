@@ -3,7 +3,7 @@
 * */
 import moment from "moment";
 import { toast } from "react-toastify";
-import errorMessage from "@/common/assets/data/error";
+import errorMessage from "@/common/asset/data/error";
 import * as environments from "@/common/environments/environment";
 
 /*
