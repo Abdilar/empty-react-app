@@ -5,9 +5,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import AppRouting from './route/app.route';
 import store from './redux/store';
 
-// import 'normalize.css/normalize.css';
-// import 'react-toastify/dist/ReactToastify.css';
-// import './assets/styles/global.scss';
+import 'normalize.css/normalize.css';
+import 'react-toastify/dist/ReactToastify.css';
+import '@/common/asset/styles/style.scss';
+import '@/panel/asset/styles/style.scss';
 
 const App = () => (
   <ReduxProvider store={store}>

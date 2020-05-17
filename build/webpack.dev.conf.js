@@ -4,12 +4,11 @@ const WEBPACK = require('webpack');
 const PORT_FINDER = require('portfinder');
 const WebpackSynchronizableShellPlugin = require('webpack-synchronizable-shell-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.conf');
 
 const devWebpackConfig = MERGE(baseWebpackConfig, {
   mode: 'development',
-  cache: false,
+  cache: true,
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: false,
@@ -48,25 +47,18 @@ const devWebpackConfig = MERGE(baseWebpackConfig, {
     new WEBPACK.DefinePlugin({
       'process.env': require('../config/enviroment.dev')
     }),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   ]
 });
 
 module.exports = new Promise((resolve, reject) => {
   PORT_FINDER.basePort = 8000;
-  // PORT_FINDER.getPort((error, port) => {
-  //   if (error) {
-  //     reject(error);
-  //   } else {
-  //     devWebpackConfig.devServer.port = port;
-  //     devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
-  //       compilationSuccessInfo: {
-  //         messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
-  //       },
-  //       onErrors: ["Error compile"]
-  //     }));
-  //     resolve(devWebpackConfig);
-  //   }
-  // });
-  resolve(devWebpackConfig);
+  PORT_FINDER.getPort((error, port) => {
+    if (error) {
+      reject(error);
+    } else {
+      devWebpackConfig.devServer.port = port;
+      resolve(devWebpackConfig);
+    }
+  });
 });

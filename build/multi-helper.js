@@ -9,7 +9,6 @@ const getEntry = () => {
     const key = file.match(/src\/(\w+)/)[1];
     entries[key] = PATH.join(__dirname, '..', file);
   });
-  console.log('Entriesssss: ', entries);
   return entries;
 };
 
@@ -37,9 +36,6 @@ const generateTemplate = () => {
       chunks: [file.chunk],
       // favicon: 'favicon.ico'
     };
-
-    console.log('template: ', templateConfig);
-
     templateList.push(new HtmlWebpackPlugin(templateConfig));
   });
 

@@ -24,8 +24,42 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName:'[local]--[hash:base64:5]'
+              }
+            }
+          },
+          'sass-loader'
+        ],
+        test: /\.module.s?css$/,
+        exclude: /node_modules/
+      },
+      {
+        use: ['style-loader','css-loader', 'sass-loader'],
         test: /\.s?css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        exclude: /\.module.s?css$/
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: PATH.posix.join('asset/images'),
+          name: '[name].[hash:5].[ext]',
+        },
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: PATH.posix.join('asset/media'),
+          name: '[name].[hash:5].[ext]',
+        }
       }
     ]
   },
