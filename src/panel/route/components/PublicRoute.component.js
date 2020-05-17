@@ -6,11 +6,10 @@ const PublicRoute = ({ component: Component, ...props }) => {
   const layout = props.layout !== undefined ? props.layout : true;
 
   return (
-    <Route exact render={(props) => (
+    <Route render={(props) => (
       layout ? <MainLayout><Component {...props} /></MainLayout>
         : <Component {...props} />
-      )}
-      {...props}
+      )} {...props}
     />
   );
 };

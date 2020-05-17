@@ -8,7 +8,7 @@ const PrivateRoute = ({ component: Component, ...props }) => {
   const layout = props.layout !== undefined ? props.layout : true;
 
   return (
-    <Route exact render={(props) => (
+    <Route render={(props) => (
       isLoggedIn ?
           (layout ? <MainLayout><Component {...props} /></MainLayout> : <Component {...props} />)
           : (<Redirect to={{pathname: '/'}}/>)

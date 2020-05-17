@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 const ProtectedRoute = ({ component: Component, ...props }) => {
   const { isLoggedIn } = props;
   return (
-    <Route exact render={(props) => (
+    <Route render={(props) => (
       !isLoggedIn ? <Component {...props} /> : (<Redirect to={'/'}/>)
       )} {...props} />
   );
