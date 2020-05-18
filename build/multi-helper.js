@@ -7,7 +7,7 @@ const getEntry = () => {
   const files = GLOB.sync("src/**/app.js");
   files.map(file => {
     const key = file.match(/src\/(\w+)/)[1];
-    entries[key] = PATH.join(__dirname, '..', file);
+    entries[key] = ['babel-polyfill', PATH.join(__dirname, '..', file)];
   });
   return entries;
 };
