@@ -2,8 +2,8 @@
 * Http interceptor is defined here
 * */
 import axios from "axios";
-import * as variables from "../config/variables";
-import * as functions from "./functions";
+import {ACCESS_TOKEN, AXIOS_TIMEOUT, BASE_URL} from "../config/variables.config";
+import {errorHandler} from "../utils/functions.util";
 // import {store} from 'redux/store';
 
 // import history from "../helper/history";
@@ -13,12 +13,12 @@ import * as functions from "./functions";
 
 class HttpService {
   constructor() {
-    axios.defaults.baseURL = variables.BASE_URL;
-    axios.defaults.timeout = variables.AXIOS_TIMEOUT;
+    axios.defaults.baseURL = BASE_URL;
+    axios.defaults.timeout = AXIOS_TIMEOUT;
 
     axios.interceptors.request.use(
       (config) => {
-        const token = localStorage.getItem(variables.ACCESS_TOKEN);
+        const token = localStorage.getItem(ACCESS_TOKEN);
         // TODO: dar refresh token, token ghabli ro dar header nafres. in check shavad va shart monaseb inja neveshte shavad
         if (token) {
           // we must not send expired token as a header to refresh our token
@@ -34,8 +34,8 @@ class HttpService {
           // toast.error(JSON.stringify(error.response.data));
         // const originalRequest = error.config;
         if (error.response && error.response.status === 401) {
-          functions.errorHandler(error);
-          // const refreshToken = localStorage.getItem(variables.REFRESH_TOKEN);
+          errorHandler(error);
+          // const refreshToken = localStorage.getItem(REFRESH_TOKEN);
           // cancelRequest && cancelRequest();
           // if (refreshToken && !cancelRequest) {
             // try {
@@ -50,22 +50,22 @@ class HttpService {
             // } catch (e) {
             //   cancelRequest = null;
             //   if (!axios.isCancel(error)) {
-            //     functions.errorHandler(e);
+            //     errorHandler(e);
             //     return Promise.reject(e);
             //   }
             // }
-            // functions.errorHandler(error);
+            // errorHandler(error);
 
           // } else {
           //   // not to show error toast when refresh token is OK to be user friendly
           //   if (!axios.isCancel(error)) {
-          //     functions.errorHandler(error);
+          //     errorHandler(error);
           //   }
           // }
         } else {
           // not to show error toast when is cancelled form axios
           // if (!axios.isCancel(error)) {
-          functions.errorHandler(error);
+          errorHandler(error);
           // }
         }
         return Promise.reject(error);
