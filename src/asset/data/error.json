@@ -1,9 +1,0 @@
-{
-  "400": "The information is not entered correctly",
-  "401": "Unauthorized, Sign in again",
-  "403": "Forbidden error",
-  "404": "Request not found",
-  "500": "oops, Server error, please try again later",
-  "connection": "Check your Internet connection",
-  "unknown": "An error has occurred, please try again"
-}

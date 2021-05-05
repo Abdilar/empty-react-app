@@ -1,3 +1,0 @@
-// USER MODULE
-export const USER_SET_USER = "USER_SET_USER";
-export const USER_SET_IS_LOGGED_IN = "USER_SET_IS_LOGGED_IN";
