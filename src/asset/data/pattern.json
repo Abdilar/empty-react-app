@@ -1,0 +1,9 @@
+{
+  "single-alphabet": "^[a-zA-Z]",
+  "single-digit": "^[0-9]",
+  "single-alphabet-digit": "^[a-zA-Z0-9]",
+  "any-digit": "\\d\\U+232B",
+  "pattern": "^[a-zA-Z0-9\\[\\]\\{\\}\\^\\.\\*\\+\\?\\,\\-\\$\\|\\(\\)\\\\\\=\\<\\!\\s]",
+  "password": "^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)]",
+  "persian-alphabet": "^[\\u0600-\\u06FF\\s]"
+}

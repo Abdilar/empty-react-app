@@ -1,0 +1,8 @@
+{
+  "classFields" : "Unauthorized",
+  "403" : "Forbidden, You have not access to do this action",
+  "400" : "Bad Request, Please fill inputs correctly",
+  "415" : "The media type is not supported",
+  "404" : "Cannot find entity",
+  "500" : "The server encountered an internal error"
+}
