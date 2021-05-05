@@ -1,4 +1,4 @@
-import http from "../services/http.service";
+import http from "../service/http.service";
 
 const generalAPIs = {
   fetchConfigs() {
