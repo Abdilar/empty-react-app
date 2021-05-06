@@ -17,7 +17,7 @@ import history from '../utils/history.util';
 export function errorHandler(err) {
   if (!navigator.onLine) {
     history.push(PAGE.ERROR);
-    toastify.error("Connection Failed, Please check your network connection");
+    toastify.error('Connection Failed, Please check your network connection');
   }
   else if (err.response && err.response.data) {
     toastify.error(errorMessage[err.response.data.status]);
