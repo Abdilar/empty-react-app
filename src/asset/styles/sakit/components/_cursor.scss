@@ -1,0 +1,11 @@
+$cursors: (pointer, default, col-resize);
+
+@each $cursor in $cursors {
+  .cursor__#{$cursor} {
+    cursor: $cursor;
+  }
+
+  .\!cursor__#{$cursor} {
+    cursor: $cursor !important;
+  }
+}

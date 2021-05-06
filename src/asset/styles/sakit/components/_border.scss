@@ -1,0 +1,72 @@
+$radius-sizes: (radius__small: 4px, radius: 6px, radius__large: 8px, radius__xlarge: 10px, radius__circle: 500px);
+$border-color-default: #e5e5e5;
+
+.border {
+  border: 1px solid;
+
+  &__default {
+    @extend .border;
+    border-color: $border-color-default;
+  }
+
+  @each $name in map-keys($radius-sizes) {
+    &__#{$name} {
+      border-radius: map_get($radius-sizes, $name);
+    }
+  }
+
+  &__top {
+    border-top: 1px solid $border-color-default;
+  }
+
+  &__right {
+    border-right: 1px solid $border-color-default;
+  }
+
+  &__bottom {
+    border-bottom: 1px solid $border-color-default;
+  }
+
+  &__left {
+    border-left: 1px solid $border-color-default;
+  }
+
+  &__remove {
+    border: unset;
+  }
+}
+
+.\!border {
+  border: 1px solid !important;
+
+  &__default {
+    @extend .\!border;
+    border-color: $border-color-default !important;
+  }
+
+  @each $name in map-keys($radius-sizes) {
+    &__#{$name} {
+      border-radius: map_get($radius-sizes, $name) !important;
+    }
+  }
+
+  &__top {
+    border-top: 1px solid $border-color-default !important;
+  }
+
+  &__right {
+    border-right: 1px solid $border-color-default !important;
+  }
+
+  &__bottom {
+    border-bottom: 1px solid $border-color-default !important;
+  }
+
+  &__left {
+    border-left: 1px solid $border-color-default !important;
+  }
+
+  &__remove {
+    border: unset !important;
+  }
+}

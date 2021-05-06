@@ -1,0 +1,30 @@
+@import "../variables/colors";
+$color-white: #fff;
+$color-muted: #f7f8fa;
+$color-light-muted: #fbfbfb;
+$color-dark: #222;
+
+$background-colors: (
+  default: $color-white,
+  muted: $color-muted,
+  light-muted: $color-light-muted,
+  transparent: transparent,
+  black: $color-dark,
+  primary: $sakit-primary-color
+);
+
+.background {
+  @each $color in map_keys($background-colors) {
+    &__#{$color} {
+      background: map_get($background-colors, $color);
+    }
+  }
+}
+
+.\!background {
+  @each $color in map_keys($background-colors) {
+    &__#{$color} {
+      background: map_get($background-colors, $color) !important;
+    }
+  }
+}

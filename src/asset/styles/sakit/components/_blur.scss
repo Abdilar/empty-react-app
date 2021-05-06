@@ -1,0 +1,26 @@
+$blur-color-white: #fff;
+$blur-color-black: #000;
+
+.blur {
+  &__white {
+    background-color: rgba($blur-color-white, .8);
+    backdrop-filter: blur(4px);
+  }
+
+  &__black {
+    background-color: rgba($blur-color-black, .3);
+    backdrop-filter: blur(4px);
+  }
+}
+
+.\!blur {
+  &__white {
+    background-color: rgba($blur-color-white, .8) !important;
+    backdrop-filter: blur(4px) !important;
+  }
+
+  &__black {
+    background-color: rgba($blur-color-black, .3) !important;
+    backdrop-filter: blur(4px) !important;
+  }
+}

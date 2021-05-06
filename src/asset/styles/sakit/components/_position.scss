@@ -1,0 +1,97 @@
+@import "../mixins/responsive";
+
+$positions: (
+  static,
+  sticky,
+  fixed,
+  absolute,
+  relative
+);
+
+.position {
+  @each $position in $positions {
+    &__#{$position} {
+      position: $position;
+
+      &\@xs {
+        @include screen-xsmall {
+          position: $position;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          position: $position;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          position: $position;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          position: $position;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          position: $position;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          position: $position;
+        }
+      }
+    }
+  }
+}
+
+.\!position {
+  @each $position in $positions {
+    &__#{$position} {
+      position: $position !important;
+
+      &\@xs {
+        @include screen-xsmall {
+          position: $position !important;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          position: $position !important;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          position: $position !important;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          position: $position !important;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          position: $position !important;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          position: $position !important;
+        }
+      }
+    }
+  }
+}

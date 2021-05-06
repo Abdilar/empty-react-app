@@ -1,0 +1,33 @@
+.flip {
+  position: relative;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+
+  &__front, &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform .3s ease;
+  }
+
+  &__front {
+    z-index: 1;
+    transform: rotateY(0);
+    backface-visibility: hidden;
+  }
+
+  &__back {
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+  }
+
+  &--swiped {
+    .flip__front {
+      transform: rotateY(180deg) !important;
+    }
+
+    .flip__back {
+      transform: rotateY(0) !important;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+$zebra-color: #f6f6f6;
+
+.table-zebra {
+  padding: .3rem .5rem;
+  background: $zebra-color;
+  word-break: break-all;
+}

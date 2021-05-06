@@ -1,0 +1,77 @@
+$height-sizes: (
+    50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000
+);
+
+@each $size in $height-sizes {
+  .height__#{$size} {
+    height: #{$size}px;
+  }
+
+  .\!height__#{$size} {
+    height: #{$size}px !important;
+  }
+
+  .min-height__#{$size} {
+    min-height: #{$size}px;
+  }
+
+  .\!min-height__#{$size} {
+    min-height: #{$size}px !important;
+  }
+
+  .max-height__#{$size} {
+    max-height: #{$size}px;
+  }
+
+  .\!max-height__#{$size} {
+    max-height: #{$size}px !important;
+  }
+}
+
+.height__expand {
+  height: 100%;
+}
+
+.\!height__expand {
+  height: 100% !important;
+}
+
+.min-height__expand {
+  min-height: 100%;
+}
+
+.\!min-height__expand {
+  min-height: 100% !important;
+}
+
+.height__auto {
+  height: auto ;
+}
+
+.\!height__auto {
+  height: auto !important;
+}
+
+.height__initial {
+  height: initial;
+}
+
+.\!height__initial {
+  height: initial !important;
+}
+
+.max-height__initial {
+  max-height: initial;
+}
+
+.\!max-height__initial {
+  max-height: initial !important;
+}
+
+.min-height__initial {
+  min-height: initial;
+}
+
+.\!min-height__initial {
+  min-height: initial !important;
+}

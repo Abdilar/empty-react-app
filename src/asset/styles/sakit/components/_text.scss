@@ -1,0 +1,198 @@
+$text-color-link: #1e87f0;
+$text-colors: (
+  black: #222,
+  muted: #666,
+  light-muted: #999,
+  light-gray: #ccc,
+  white: #fff,
+  light: #f0f2f6
+);
+$text-sizes: (
+  inherit: inherit,
+  xxsmall: .8rem,
+  xsmall: 1rem,
+  small: 1.2rem,
+  dmedium: 1.3rem,
+  medium: 1.4rem,
+  umedium: 1.5rem,
+  large: 1.8rem,
+  xlarge: 2rem
+);
+
+$text-aligns: (
+  left: left,
+  center: center,
+  right: right
+);
+
+$text-styles: (
+  inherit: inherit,
+  initial: initial,
+  italic: italic,
+  normal: normal,
+  oblique: oblique
+);
+
+//.text-main-color {
+//  color: $black-color !important;
+//}
+//
+//.text-light-color {
+//  color: $text-gray-color !important;
+//}
+//
+//.text-lighter-color {
+//  color: $text-light-gray-color !important;
+//}
+//
+//.text-placeholder {
+//  color: lighten($text-light-gray-color, 33%) !important;
+//}
+
+
+
+//.text-ellipsis {
+//  text-overflow: ellipsis;
+//  white-space: nowrap;
+//  overflow: hidden;
+//  width: 100%;
+//}
+//
+//.text-xsmall {
+//  font-size: .775rem;
+//}
+//
+//.text-small {
+//  font-size: .875rem;
+//}
+//
+//.\!text-small {
+//  font-size: .875rem !important;
+//}
+//
+//.text-medium {
+//  font-size: 1.2rem;
+//}
+//
+//.text-large {
+//  font-size: 1.5rem;
+//}
+//
+//.text-xlarge {
+//  font-size: 1.8rem;
+//}
+
+
+
+// refactored
+.text {
+  &__bold {
+    font-weight: bold;
+  }
+
+  &__bolder {
+    font-weight: bolder;
+  }
+
+  &__link {
+    color: $text-color-link;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color .1s linear;
+
+    &:hover {
+      color: darken($text-color-link, 20%);
+      text-decoration: none;
+    }
+  }
+
+  &__italic {
+    font-style: italic;
+  }
+
+  &__ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__no-wrap {
+    white-space: nowrap;
+  }
+
+  &__break-spaces {
+    white-space: break-spaces;
+  }
+
+  &__plain {
+    & * {
+      color: inherit !important;
+      display: inline !important;
+      font-family: inherit !important;
+      font-style: normal !important;
+      font-weight: inherit !important;
+      padding: 0;
+      text-decoration: none !important;
+    }
+    & br {
+      display: none !important;
+    }
+  }
+
+  &__space__10 {
+    letter-spacing: 10px;
+  }
+
+
+  @each $color in map_keys($text-colors) {
+    &__#{$color} {
+      color: map-get($text-colors, $color);
+    }
+  }
+}
+
+@each $text in map_keys($text-sizes) {
+  .text__#{$text} {
+    font-size: map_get($text-sizes, $text);
+  }
+
+  .\!text__#{$text} {
+    font-size: map_get($text-sizes, $text) !important;
+  }
+}
+
+@each $align in map_keys($text-aligns) {
+  .text__#{$align} {
+    text-align: map_get($text-aligns, $align);
+  }
+
+  .\!text__#{$align} {
+    text-align: map_get($text-aligns, $align) !important;
+  }
+}
+
+@each $style in map_keys($text-styles) {
+  .text__#{$style} {
+    font-style: map_get($text-styles, $style);
+  }
+
+  .\!text__#{$style} {
+    font-style: map_get($text-styles, $style) !important;
+  }
+}
+
+.\!text {
+  @each $color in map_keys($text-colors) {
+    &__#{$color} {
+      color: map-get($text-colors, $color) !important;
+    }
+  }
+
+  &__bold {
+    font-weight: bold !important;
+  }
+
+  &__bolder {
+    font-weight: bolder !important;
+  }
+}

@@ -1,0 +1,383 @@
+@import "../mixins/responsive";
+
+.flex {
+  display: flex;
+  &__center__vertical {
+    @extend .flex;
+    align-items: center;
+  }
+
+  &__center__horizontal {
+    @extend .flex;
+    justify-content: center;
+  }
+
+  &__row {
+    @extend .flex;
+    flex-direction: row;
+
+    &\@xs {
+      @include screen-xsmall {
+        flex-direction: row;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        flex-direction: row;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        flex-direction: row;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        flex-direction: row;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        flex-direction: row;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__row-reverse {
+    @extend .flex;
+    flex-direction: row-reverse;
+
+    &\@xs {
+      @include screen-xsmall {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__column {
+    @extend .flex;
+    flex-direction: column;
+
+    &\@xs {
+      @include screen-xsmall {
+        flex-direction: column;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        flex-direction: column;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        flex-direction: column;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        flex-direction: column;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        flex-direction: column;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__column-reverse {
+    @extend .flex;
+    flex-direction: column-reverse;
+
+    &\@xs {
+      @include screen-xsmall {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__end {
+    @extend .flex;
+    align-items: flex-end;
+  }
+
+  &__space-between {
+    @extend .flex;
+    justify-content: space-between;
+  }
+
+  &-1 {
+    flex: 1;
+  }
+}
+
+.\!flex {
+  display: flex !important;
+  &__center__vertical {
+    @extend .\!flex;
+    align-items: center !important;
+  }
+
+  &__center__horizontal {
+    @extend .\!flex;
+    justify-content: center !important;
+  }
+
+  &__row {
+    @extend .\!flex;
+    flex-direction: row !important;
+
+    &\@xs {
+      @include screen-xsmall {
+        flex-direction: row !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        flex-direction: row !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        flex-direction: row !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        flex-direction: row !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        flex-direction: row !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        flex-direction: row !important;
+      }
+    }
+  }
+
+  &__row-reverse {
+    @extend .\!flex;
+    flex-direction: row-reverse !important;
+
+    &\@xs {
+      @include screen-xsmall {
+        flex-direction: row-reverse !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        flex-direction: row-reverse !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        flex-direction: row-reverse !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        flex-direction: row-reverse !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        flex-direction: row-reverse !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        flex-direction: row-reverse !important;
+      }
+    }
+  }
+
+  &__column {
+    @extend .\!flex;
+    flex-direction: column !important;
+
+    &\@xs {
+      @include screen-xsmall {
+        flex-direction: column !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        flex-direction: column !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        flex-direction: column !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        flex-direction: column !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        flex-direction: column !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        flex-direction: column !important;
+      }
+    }
+  }
+
+  &__column-reverse {
+    @extend .\!flex;
+    flex-direction: column-reverse !important;
+
+    &\@xs {
+      @include screen-xsmall {
+        flex-direction: column-reverse !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        flex-direction: column-reverse !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        flex-direction: column-reverse !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        flex-direction: column-reverse !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        flex-direction: column-reverse !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        flex-direction: column-reverse !important;
+      }
+    }
+  }
+
+  &__end {
+    @extend .\!flex;
+    align-items: flex-end !important;
+  }
+
+  &__space-between {
+    @extend .\!flex;
+    justify-content: space-between !important;
+  }
+
+  &-1 {
+    flex: 1 !important;
+  }
+}

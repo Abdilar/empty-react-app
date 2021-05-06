@@ -1,0 +1,17 @@
+@keyframes progress {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.animation--progress {
+  -webkit-animation-name: progress;
+  -moz-animation-name: progress;
+  -o-animation-name: progress;
+  animation-name: progress;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}

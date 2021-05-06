@@ -1,0 +1,64 @@
+$base_path: './../../fonts';
+$format: 'woff';
+$primary-name: 'IranSans';
+$primary-path: 'iransans';
+$secondary-name: 'YekanBakh';
+$secondary-path: 'yekan-bakh';
+$type: 'woff';
+
+$src: (
+  regular: url('#{$base_path}/#{$primary-path}/#{$primary-name}.#{$type}'),
+  light: url('#{$base_path}/#{$primary-path}/#{$primary-name}Light.#{$type}'),
+  bold: url('#{$base_path}/#{$primary-path}/#{$primary-name}Bold.#{$type}')
+);
+
+$new-src: (
+  regular: url('#{$base_path}/#{$secondary-path}/#{$secondary-name}.#{$type}'),
+  light: url('#{$base_path}/#{$secondary-path}/#{$secondary-name}Light.#{$type}'),
+  bold: url('#{$base_path}/#{$secondary-path}/#{$secondary-name}Bold.#{$type}'),
+  medium: url('#{$base_path}/#{$secondary-path}/#{$secondary-name}Medium.#{$type}'),
+  thin: url('#{$base_path}/#{$secondary-path}/#{$secondary-name}Thin.#{$type}'),
+  heavy: url('#{$base_path}/#{$secondary-path}/#{$secondary-name}Heavy.#{$type}'),
+);
+
+@each $var in map-keys($map: $src) {
+  @font-face {
+    font-family: '#{$primary-name}-#{$var}';
+    src: map-get($map: $src, $key: $var) format('#{$format}');
+  }
+}
+
+@each $var in map-keys($map: $new-src) {
+  @font-face {
+    font-family: '#{$secondary-name}-#{$var}';
+    src: map-get($map: $new-src, $key: $var) format('#{$format}');
+  }
+}
+
+@mixin primary-font-family($type: 'regular', $lang: 'fa') {
+  font-family: '#{$primary-name}-#{$type}', sans-serif !important;
+}
+
+@mixin secondary-font-family($type: 'regular') {
+  font-family: '#{$secondary-name}-#{$type}', sans-serif !important;
+}
+
+.\!font-regular {
+  @include primary-font-family();
+}
+
+.\!font-bold {
+  @include primary-font-family('bold');
+}
+
+.\!font-light {
+  @include primary-font-family('light');
+}
+
+.\!font-medium {
+  @include primary-font-family('medium');
+}
+
+.\!font-black {
+  @include primary-font-family('black');
+}

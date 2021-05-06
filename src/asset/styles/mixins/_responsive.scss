@@ -1,0 +1,72 @@
+@mixin small-mobile { @media (max-width: #{$screen-xs}) {@content;} }
+@mixin mobile { @media (min-width: #{$screen-xs + 1}) and (max-width: #{$screen-sm}) {@content;} }
+@mixin large-mobile { @media (min-width: #{$screen-sm + 1}) and (max-width: #{$screen-md}) {@content;} }
+@mixin tablet { @media (min-width: #{$screen-md + 1}) and (max-width: #{$screen-lg}) {@content;} }
+@mixin small-laptop { @media (min-width: #{$screen-lg + 1}) and (max-width: #{$screen-xl}) {@content;} }
+@mixin laptop { @media (min-width: #{$screen-xl + 1}) and (max-width: #{$screen-xxl}) {@content;} }
+@mixin large-laptop { @media (min-width: #{$screen-xxl + 1}) {@content;} }
+
+@mixin just-laptop { @media (min-width: #{$screen-lg + 1}) {@content;} }
+@mixin just-mobile { @media (max-width: #{$screen-md}) {@content;} }
+@mixin just-mobile-tablet { @media (max-width: #{$screen-lg}) {@content;} }
+@mixin just-tablet-laptop { @media (min-width: #{$screen-md + 1}) {@content;} }
+
+@mixin ipad-pro-portrait {
+  @media (min-width: #{$screen-lg + 1}) and (max-width: #{$screen-xl}) {
+    @media (min-height: #{$screen-xl + 1}) and (max-height: #{$screen-xxl}) {@content;}
+  }
+}
+
+@mixin ipad-pro-landscape {
+  @media (min-width: #{$screen-xl + 1}) and (max-width: #{$screen-xxl}) {
+    @media (min-height: #{$screen-lg + 1}) and (max-height: #{$screen-xl}) {@content;}
+  }
+}
+
+// LANDSCAPE MODE
+@mixin mobile-tablet-landscape {
+  @media screen and (max-width: $screen-xl) and (orientation : landscape) {@content;}
+}
+@mixin mobile-landscape {
+  @media screen and (min-width: $screen-md + 1) and (max-width: $screen-lg) and (orientation : landscape) {@content;}
+}
+@mixin small-mobile-landscape {
+  @media screen and (max-width: $screen-md) and (orientation : landscape) {@content;}
+}
+
+@mixin screen-xs { @media (min-width: $screen-xs + 1) {@content;} }
+@mixin screen-sm { @media (min-width: $screen-sm + 1) {@content;} }
+@mixin screen-md { @media (min-width: $screen-md + 1) {@content;} }
+@mixin screen-lg { @media (min-width: $screen-lg + 1) {@content;} }
+@mixin screen-xl { @media (min-width: $screen-xl + 1) {@content;} }
+@mixin screen-xxl { @media (min-width: $screen-xxl + 1) {@content;} }
+
+@mixin between($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {@content;}
+}
+
+//$screen-xs: 359px;
+//$screen-sm: 449px;
+//$screen-md: 639px;
+//$screen-lg: 959px;
+//$screen-xl: 1199px;
+//$screen-xxl: 1599px;
+//
+//$xsmall: 360px;
+//$small: 640px;
+//$medium: 960px;
+//$large: 1200px;
+//$xlarge: 1600px;
+
+
+
+// @mixin xsmall-gt { @media (min-width: #{$xsmall}) {@content;} } /* -> changed to screen-xs */
+//@mixin small-gt { @media (min-width: #{$small}) {@content;} }
+// @mixin medium-gt { @media (min-width: #{$medium}) {@content;} } /* -> changed to screen-md */
+//@mixin large-gt { @media (min-width: #{$large}) {@content;} }
+//@mixin xlarge-gt { @media (min-width: #{$xlarge}) {@content;} }
+
+// @mixin xsmall-lt { @media (max-width: #{$xsmall - 1}) {@content;} } /* -> changed to small-mobile */
+//@mixin small-lt { @media (max-width: #{$small - 1}) {@content;} }
+//@mixin medium-lt { @media (max-width: #{$medium - 1}) {@content;} }
+//@mixin large-lt { @media (max-width: #{$large - 1}) {@content;} }

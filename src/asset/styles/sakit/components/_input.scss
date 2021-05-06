@@ -1,0 +1,56 @@
+$border-color: #d6dde3;
+$text-color: #6F7782;
+$background-color: #fff;
+$transition: .2s ease-in-out;
+
+$input-colors: (
+  default: #fff,
+  primary: #1b67db,
+  secondary: #fcbd00
+);
+
+$input-sizes: (
+  small: 30px,
+  medium: 40px,
+  large: 55px
+);
+
+.input {
+  height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 10px;
+  background: $background-color;
+  color: $text-color;
+  transition: $transition;
+  box-sizing: border-box;
+  transition-property: color, background-color, border;
+
+  @each $color in map_keys($input-colors) {
+    &__#{$color} {
+      @extend .input;
+      &:focus {
+        outline: none;
+        border-color: map_get($input-colors, $color);
+      }
+    }
+  }
+
+  @each $size in map_keys($input-sizes) {
+    &__#{$size} {
+      height: map_get($input-sizes, $size) !important;
+    }
+  }
+
+  &__ltr--focus:focus {
+    direction: ltr;
+  }
+
+  &__rtl--focus:focus {
+    direction: rtl;
+  }
+}

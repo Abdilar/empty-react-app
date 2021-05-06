@@ -1,0 +1,45 @@
+$checkbox-color-blue: #1b67db;
+$checkbox-color-yellow: #fcbd00;
+$checkbox-border-color: #848b94;
+
+$checkbox-colors: (
+  primary: $checkbox-color-blue,
+  secondary: $checkbox-color-yellow
+);
+
+.checkbox {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  overflow: hidden;
+  margin: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 10px;
+  border: 1px solid $checkbox-border-color;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, border;
+  outline: none;
+
+  &:checked {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+    border-color: transparent;
+  }
+
+  @each $color in map_keys($checkbox-colors) {
+    &__#{$color} {
+      @extend .checkbox;
+      &:checked {
+        background-color: map_get($checkbox-colors, $color);
+      }
+    }
+  }
+}

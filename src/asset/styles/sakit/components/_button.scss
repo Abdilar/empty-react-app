@@ -1,0 +1,106 @@
+@import "../variables/colors";
+@import "../variables/configs";
+$button-color-muted: #666;
+$button-color-white: #fff;
+$button-circle-size: 25px;
+$darken-amount: $sakit-darken-amount;
+
+$button-colors: (
+  default: #fff,
+  primary: $sakit-primary-color,
+  secondary: #fcbd00
+);
+
+@mixin getButtonStyle($color, $important) {
+  @if($important == true) {
+    background: map_get($button-colors, $color) !important;
+  } @else {
+    background: map_get($button-colors, $color);
+  }
+  @if ($color == default) {
+    @if($important == true) {
+      color: $button-color-muted !important;
+      border: 1px solid lighten($button-color-muted, 30%) !important;
+    } @else {
+      color: $button-color-muted;
+      border: 1px solid lighten($button-color-muted, 30%);
+    }
+  }
+  @else if ($color != default) {
+    @if($important == true) {
+      color: $button-color-white !important;
+      border: none !important;
+    } @else {
+      color: $button-color-white;
+      border: none;
+    }
+  }
+  &:hover {
+    @if($important == true) {
+      background: darken(map_get($button-colors, $color), $darken-amount) !important;
+    } @else {
+      background: darken(map_get($button-colors, $color), $darken-amount);
+    }
+  }
+}
+
+.button {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 8px 10px;
+  outline: none;
+  cursor: pointer;
+  transition: background .1s ease-in-out;
+
+  @each $color in map_keys($button-colors) {
+    &__#{$color} {
+      @extend .button;
+      @include getButtonStyle($color, false);
+    }
+  }
+}
+
+.\!button {
+  -webkit-border-radius: 4px !important;
+  -moz-border-radius: 4px !important;
+  border-radius: 4px !important;
+  padding: 8px 10px !important;
+  outline: none !important;
+  cursor: pointer !important;
+  transition: background-color .1s ease-in-out !important;
+
+  @each $color in map_keys($button-colors) {
+    &__#{$color} {
+      @extend .\!button;
+      @include getButtonStyle($color, true);
+    }
+  }
+}
+
+.button__circle {
+  align-items: center;
+  border: none;
+  border-radius: $button-circle-size;
+  cursor: pointer;
+  display: flex;
+  height: $button-circle-size;
+  justify-content: center;
+  outline: none;
+  padding: 6px;
+  transition: background-color .1s ease-in-out;
+  width: $button-circle-size;
+
+  @each $color in map_keys($button-colors) {
+    &__#{$color} {
+      @extend .button__circle;
+      @include getButtonStyle($color, false);
+    }
+  }
+
+  & svg {
+    circle {
+      stroke: none !important;
+    }
+  }
+}

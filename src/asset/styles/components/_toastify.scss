@@ -1,0 +1,83 @@
+$background-color: #fff;
+$border-radius: 8px;
+$min-height: 75px;
+$progress-bar-height: 8px;
+$width: 195px;
+
+
+.Toastify {
+  &__toast {
+    background: $background-color;
+    border-radius: $border-radius;
+    margin-bottom: 10px;
+    min-height: $min-height;
+    padding: 12px 8px 8px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: $progress-bar-height;
+      background-color: $light-muted-color;
+      width: 100%;
+    }
+  }
+
+  &__progress-bar {
+    bottom: initial;
+    top: 0;
+    height: $progress-bar-height;
+  }
+
+  &__toast-body {
+    @include primary-font-family('light');
+    color: $text-color;
+    flex: 1;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  &__toast-container {
+    width: $width;
+    &--bottom-left {
+      bottom: -0.4em;
+      left: 0.1em;
+
+      @include just-mobile {
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+        width: initial;
+      }
+    }
+  }
+  &__toast--error {
+     & .Toastify__progress-bar {
+       background: $danger-color;
+     }
+  }
+  &__toast--warning {
+     & .Toastify__progress-bar {
+       background: $warning-color;
+     }
+  }
+  &__toast--success {
+     & .Toastify__progress-bar {
+       background: $success-color;
+     }
+  }
+  &__toast--info {
+     & .Toastify__progress-bar {
+       background: $draft-color;
+     }
+  }
+
+  &__close-button {
+    color: $text-color;
+  }
+}
+
+.placeholder {
+  color: #fff !important;
+}

@@ -1,0 +1,29 @@
+$shadow-color-default: rgba(0, 0, 0, 0.1);
+
+.shadow__xsmall {
+  box-shadow: 0 1px 5px $shadow-color-default;
+}
+
+.shadow__small {
+  box-shadow: 0 2px 5px $shadow-color-default;
+}
+
+.shadow__large {
+  box-shadow: 0 4px 5px $shadow-color-default;
+}
+
+.shadow__xsmall-reverse {
+  box-shadow: 0 -1px 5px $shadow-color-default;
+}
+
+.shadow__small-reverse {
+  box-shadow: 0 -2px 5px $shadow-color-default;
+}
+
+.shadow__large-reverse {
+  box-shadow: 0 -4px 5px $shadow-color-default;
+}
+
+.shadow__remove {
+  box-shadow: initial;
+}

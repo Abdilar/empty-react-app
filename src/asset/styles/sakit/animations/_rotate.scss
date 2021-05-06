@@ -1,0 +1,22 @@
+$transition: .2s ease-in-out;
+
+$rotate-degrees: (
+  "45": 45,
+  "90": 90,
+  "135": 135,
+  "180": 180,
+  "45-": -45,
+  "90-": -90,
+  "135-": -135,
+  "180-": -180,
+);
+
+.rotate {
+  transition: transform $transition;
+
+  @each $degree in map_keys($rotate-degrees) {
+    &--#{$degree} {
+      transform: rotate(#{map_get($rotate-degrees, $degree)}deg);
+    }
+  }
+}

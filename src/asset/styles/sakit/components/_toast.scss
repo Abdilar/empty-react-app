@@ -1,0 +1,130 @@
+@import "../variables/colors";
+@import "../variables/configs";
+
+$border-radius: 4px;
+$font: $saffron-font-light;
+$hover-amount: 6%;
+$padding: 10px 20px;
+$reject-background: #fff;
+$transition: .2s ease-in-out;
+$toast-colors: (
+  'default': (background: #f6f8f9, color: #666),
+  'info': (background: #d8eafc, color: #1e87f0),
+  'danger': (background: #ffe2ea, color: #fe1655),
+  'warning': (background: #fff0dc, color: #fea619),
+  'success': (background: #edfbf6, color: #30d4b1)
+);
+
+.parent__saffron-toast {
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.saffron-toast {
+  left: 0;
+  right: 0;
+  top: 0;
+  transform: translateY(-100px);
+  transition: transform $transition;
+  z-index: 999;
+
+  &--absolute {
+    position: absolute !important;
+  }
+
+  &--open {
+    transform: translateY(0);
+  }
+
+  &__wrapper {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    font-family: $font;
+    padding: $padding;
+    position: relative;
+  }
+
+  &__icon {
+    align-items: center;
+    display: inline-flex;
+    margin-right: 10px;
+  }
+
+  &__close {
+    display: inline-flex;
+    cursor: pointer;
+    margin-left: 10px;
+    opacity: .7;
+    padding: 4px;
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+  }
+
+  &__button {
+    border: 1px solid;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-family: inherit;
+    outline: unset;
+    padding: 3px 10px;
+    transition: background $transition;
+
+    &--reject {
+      background: $reject-background;
+      border-color: #c8ced3;
+      color: #666;
+      margin-right: 5px;
+
+      &:hover {
+        background: darken($reject-background, $hover-amount);
+      }
+    }
+  }
+
+  &__controller {
+    align-items: center;
+    display: inline-flex;
+  }
+
+  @each $color in map_keys($toast-colors) {
+    &--#{$color} {
+      background: map_get(map_get($toast-colors, $color), background);
+      color: map_get(map_get($toast-colors, $color), color);
+
+      & .saffron-toast__button--confirm {
+        background: map_get(map_get($toast-colors, $color), color);
+        border-color: map_get(map_get($toast-colors, $color), color);
+        color: #fff;
+
+        &:hover {
+          background: darken(map_get(map_get($toast-colors, $color), color), $hover-amount);
+        }
+      }
+    }
+
+    &__progress--#{$color} {
+      background: darken(map_get(map_get($toast-colors, $color), background), 10%);
+
+      .progress__content {
+        background: map_get(map_get($toast-colors, $color), color);
+        height: 3px;
+      }
+    }
+  }
+}
+

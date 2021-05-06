@@ -1,0 +1,12 @@
+$bullet-color: #e5e5e5;
+
+.heading__bullet::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: calc(-.1 * 1em);
+  vertical-align: middle;
+  height: calc(10px + .7em);
+  margin-left: calc(5px + .2em);
+  border-right: calc(5px + .1em) solid $bullet-color;
+}

@@ -1,0 +1,38 @@
+$overflows: (hidden, auto, initial, overlay, scroll, visible, revert);
+$overflow-wraps: (anywhere, break-word, initial, normal, revert);
+
+@each $overflow in $overflows {
+  .overflow-#{$overflow} {
+    overflow: $overflow;
+  }
+
+  .overflow-y-#{$overflow} {
+    overflow-y: $overflow;
+  }
+
+  .overflow-x-#{$overflow} {
+    overflow-x: $overflow;
+  }
+
+  .\!overflow-#{$overflow} {
+    overflow: $overflow !important;
+  }
+
+  .\!overflow-y-#{$overflow} {
+    overflow-y: $overflow !important;
+  }
+
+  .\!overflow-x-#{$overflow} {
+    overflow-x: $overflow !important;
+  }
+}
+
+@each $overflow-wrap in $overflow-wraps {
+  .overflow-wrap-#{$overflow-wrap} {
+    overflow-wrap: $overflow-wrap;
+  }
+
+  .\!overflow-wrap-#{$overflow-wrap} {
+    overflow-wrap: $overflow-wrap !important;
+  }
+}

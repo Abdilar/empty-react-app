@@ -1,0 +1,1433 @@
+@import "../mixins/responsive";
+
+$margin-sizes: (
+  5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100
+);
+
+@each $margin in $margin-sizes {
+  .margin {
+    &__#{$margin} {
+      margin: #{$margin}px;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin: #{$margin}px;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin: #{$margin}px;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin: #{$margin}px;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin: #{$margin}px;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin: #{$margin}px;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin: #{$margin}px;
+        }
+      }*/
+    }
+
+    &__horizontal__#{$margin} {
+      margin-right: #{$margin}px;
+      margin-left: #{$margin}px;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-right: #{$margin}px;
+          margin-left: #{$margin}px;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-right: #{$margin}px;
+          margin-left: #{$margin}px;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-right: #{$margin}px;
+          margin-left: #{$margin}px;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-right: #{$margin}px;
+          margin-left: #{$margin}px;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-right: #{$margin}px;
+          margin-left: #{$margin}px;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-right: #{$margin}px;
+          margin-left: #{$margin}px;
+        }
+      }*/
+    }
+
+    &__vertical__#{$margin} {
+      margin-top: #{$margin}px;
+      margin-bottom: #{$margin}px;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-top: #{$margin}px;
+          margin-bottom: #{$margin}px;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-top: #{$margin}px;
+          margin-bottom: #{$margin}px;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-top: #{$margin}px;
+          margin-bottom: #{$margin}px;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-top: #{$margin}px;
+          margin-bottom: #{$margin}px;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-top: #{$margin}px;
+          margin-bottom: #{$margin}px;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-top: #{$margin}px;
+          margin-bottom: #{$margin}px;
+        }
+      }*/
+    }
+
+    &__top__#{$margin} {
+      margin-top: #{$margin}px;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-top: #{$margin}px;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-top: #{$margin}px;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-top: #{$margin}px;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-top: #{$margin}px;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-top: #{$margin}px;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-top: #{$margin}px;
+        }
+      }*/
+    }
+
+    &__right__#{$margin} {
+      margin-right: #{$margin}px;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-right: #{$margin}px;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-right: #{$margin}px;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-right: #{$margin}px;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-right: #{$margin}px;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-right: #{$margin}px;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-right: #{$margin}px;
+        }
+      }*/
+    }
+
+    &__bottom__#{$margin} {
+      margin-bottom: #{$margin}px;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-bottom: #{$margin}px;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-bottom: #{$margin}px;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-bottom: #{$margin}px;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-bottom: #{$margin}px;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-bottom: #{$margin}px;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-bottom: #{$margin}px;
+        }
+      }*/
+    }
+
+    &__left__#{$margin} {
+      margin-left: #{$margin}px;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-left: #{$margin}px;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-left: #{$margin}px;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-left: #{$margin}px;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-left: #{$margin}px;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-left: #{$margin}px;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-left: #{$margin}px;
+        }
+      }*/
+    }
+  }
+
+  .\!margin {
+    &__#{$margin} {
+      margin: #{$margin}px !important;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin: #{$margin}px !important;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin: #{$margin}px !important;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin: #{$margin}px !important;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin: #{$margin}px !important;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin: #{$margin}px !important;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin: #{$margin}px !important;
+        }
+      }*/
+    }
+
+    &__horizontal__#{$margin} {
+      margin-right: #{$margin}px !important;
+      margin-left: #{$margin}px !important;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-right: #{$margin}px !important;
+          margin-left: #{$margin}px !important;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-right: #{$margin}px !important;
+          margin-left: #{$margin}px !important;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-right: #{$margin}px !important;
+          margin-left: #{$margin}px !important;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-right: #{$margin}px !important;
+          margin-left: #{$margin}px !important;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-right: #{$margin}px !important;
+          margin-left: #{$margin}px !important;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-right: #{$margin}px !important;
+          margin-left: #{$margin}px !important;
+        }
+      }*/
+    }
+
+    &__vertical__#{$margin} {
+      margin-top: #{$margin}px !important;
+      margin-bottom: #{$margin}px !important;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-top: #{$margin}px !important;
+          margin-bottom: #{$margin}px !important;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-top: #{$margin}px !important;
+          margin-bottom: #{$margin}px !important;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-top: #{$margin}px !important;
+          margin-bottom: #{$margin}px !important;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-top: #{$margin}px !important;
+          margin-bottom: #{$margin}px !important;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-top: #{$margin}px !important;
+          margin-bottom: #{$margin}px !important;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-top: #{$margin}px !important;
+          margin-bottom: #{$margin}px !important;
+        }
+      }*/
+    }
+
+    &__top__#{$margin} {
+      margin-top: #{$margin}px !important;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-top: #{$margin}px !important;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-top: #{$margin}px !important;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-top: #{$margin}px !important;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-top: #{$margin}px !important;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-top: #{$margin}px !important;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-top: #{$margin}px !important;
+        }
+      }*/
+    }
+
+    &__right__#{$margin} {
+      margin-right: #{$margin}px !important;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-right: #{$margin}px !important;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-right: #{$margin}px !important;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-right: #{$margin}px !important;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-right: #{$margin}px !important;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-right: #{$margin}px !important;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-right: #{$margin}px !important;
+        }
+      }*/
+    }
+
+    &__bottom__#{$margin} {
+      margin-bottom: #{$margin}px !important;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-bottom: #{$margin}px !important;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-bottom: #{$margin}px !important;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-bottom: #{$margin}px !important;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-bottom: #{$margin}px !important;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-bottom: #{$margin}px !important;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-bottom: #{$margin}px !important;
+        }
+      }*/
+    }
+
+    &__left__#{$margin} {
+      margin-left: #{$margin}px !important;
+
+      /*&\@xs {
+        @include screen-xsmall {
+          margin-left: #{$margin}px !important;
+        }
+      }
+
+      &\@s {
+        @include screen-small {
+          margin-left: #{$margin}px !important;
+        }
+      }
+
+      &\@m {
+        @include screen-medium {
+          margin-left: #{$margin}px !important;
+        }
+      }
+
+      &\@l {
+        @include screen-large {
+          margin-left: #{$margin}px !important;
+        }
+      }
+
+      &\@xl {
+        @include screen-xlarge {
+          margin-left: #{$margin}px !important;
+        }
+      }
+
+      &\@xxl {
+        @include screen-xxlarge {
+          margin-left: #{$margin}px !important;
+        }
+      }*/
+    }
+  }
+
+  .margin__child {
+    &__#{$margin} > * {
+      margin: #{$margin}px;
+    }
+
+    &__horizontal__#{$margin} > * {
+      margin-right: #{$margin}px;
+      margin-left: #{$margin}px;
+    }
+
+    &__vertical__#{$margin} > * {
+      margin-top: #{$margin}px;
+      margin-bottom: #{$margin}px;
+    }
+
+    &__top__#{$margin} > * {
+      margin-top: #{$margin}px;
+    }
+
+    &__right__#{$margin} > * {
+      margin-right: #{$margin}px;
+    }
+
+    &__bottom__#{$margin} > * {
+      margin-bottom: #{$margin}px;
+    }
+
+    &__left__#{$margin} > * {
+      margin-left: #{$margin}px;
+    }
+  }
+
+  .\!margin__child {
+    &__#{$margin} > * {
+      margin: #{$margin}px !important;
+    }
+
+    &__horizontal__#{$margin} > * {
+      margin-right: #{$margin}px !important;
+      margin-left: #{$margin}px !important;
+    }
+
+    &__vertical__#{$margin} > * {
+      margin-top: #{$margin}px !important;
+      margin-bottom: #{$margin}px !important;
+    }
+
+    &__top__#{$margin} > * {
+      margin-top: #{$margin}px !important;
+    }
+
+    &__right__#{$margin} > * {
+      margin-right: #{$margin}px !important;
+    }
+
+    &__bottom__#{$margin} > * {
+      margin-bottom: #{$margin}px !important;
+    }
+
+    &__left__#{$margin} > * {
+      margin-left: #{$margin}px !important;
+    }
+  }
+}
+
+.margin__remove {
+  & {
+    margin: 0;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin: 0;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin: 0;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin: 0;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin: 0;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin: 0;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin: 0;
+      }
+    }*/
+  }
+
+  &__horizontal {
+    margin-right: 0;
+    margin-left: 0;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }*/
+  }
+
+  &__vertical {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }*/
+  }
+
+  &__top {
+    margin-top: 0;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-top: 0;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-top: 0;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-top: 0;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-top: 0;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-top: 0;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-top: 0;
+      }
+    }*/
+  }
+
+  &__right {
+    margin-right: 0;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-right: 0;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-right: 0;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-right: 0;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-right: 0;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-right: 0;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-right: 0;
+      }
+    }*/
+  }
+
+  &__bottom {
+    margin-bottom: 0;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-bottom: 0;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-bottom: 0;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-bottom: 0;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-bottom: 0;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-bottom: 0;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-bottom: 0;
+      }
+    }*/
+  }
+
+  &__left {
+    margin-left: 0;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-left: 0;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-left: 0;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-left: 0;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-left: 0;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-left: 0;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-left: 0;
+      }
+    }*/
+  }
+}
+
+.\!margin__remove {
+  & {
+    margin: 0 !important;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin: 0 !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin: 0 !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin: 0 !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin: 0 !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin: 0 !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin: 0 !important;
+      }
+    }*/
+  }
+
+  &__horizontal {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+    }*/
+  }
+
+  &__vertical {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+    }*/
+  }
+
+  &__top {
+    margin-top: 0 !important;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-top: 0 !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-top: 0 !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-top: 0 !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-top: 0 !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-top: 0 !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-top: 0 !important;
+      }
+    }*/
+  }
+
+  &__right {
+    margin-right: 0 !important;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-right: 0 !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-right: 0 !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-right: 0 !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-right: 0 !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-right: 0 !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-right: 0 !important;
+      }
+    }*/
+  }
+
+  &__bottom {
+    margin-bottom: 0 !important;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-bottom: 0 !important;
+      }
+    }*/
+  }
+
+  &__left {
+    margin-left: 0 !important;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-left: 0 !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-left: 0 !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-left: 0 !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-left: 0 !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-left: 0 !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-left: 0 !important;
+      }
+    }*/
+  }
+}
+
+.margin__auto {
+  & {
+    margin: auto;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin: auto;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin: auto;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin: auto;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin: auto;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin: auto;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin: auto;
+      }
+    }*/
+  }
+
+  &__horizontal {
+    margin-right: auto;
+    margin-left: auto;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }*/
+  }
+}
+
+.\!margin__auto {
+  & {
+    margin: auto !important;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin: auto !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin: auto !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin: auto !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin: auto !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin: auto !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin: auto !important;
+      }
+    }*/
+  }
+
+  &__horizontal {
+    margin-right: auto !important;
+    margin-left: auto !important;
+
+    /*&\@xs {
+      @include screen-xsmall {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+    }
+
+    &\@s {
+      @include screen-small {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+    }
+
+    &\@m {
+      @include screen-medium {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+    }
+
+    &\@l {
+      @include screen-large {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+    }
+
+    &\@xl {
+      @include screen-xlarge {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+    }
+
+    &\@xxl {
+      @include screen-xxlarge {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+    }*/
+  }
+}

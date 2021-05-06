@@ -1,0 +1,43 @@
+@import "colors";
+@import "sakit/style";
+@import "mixins/index";
+@import "components/index";
+@import "uikit";
+
+html {
+  font-size: 62.5%;
+}
+
+html, body, main {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  @include primary-font-family();
+  font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include primary-font-family(bold);
+}
+
+p, span, a, legend, textarea, li {
+  @include primary-font-family('light');
+  font-size: 1.2rem;
+}
+
+label {
+  @include primary-font-family('light');
+  font-size: 1.4rem;
+}
+
+figure {
+  margin: 0;
+}
+
+body > main {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

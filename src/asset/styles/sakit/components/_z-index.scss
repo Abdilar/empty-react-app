@@ -1,0 +1,17 @@
+$indexes: ('1-': -1, 1: 1, 2: 2, 3: 3, 4: 4, 997: 997, 998: 998, 999: 999, 1000: 1000);
+
+.z-index {
+  @each $index in map_keys($indexes) {
+    &-#{$index} {
+      z-index: map_get($indexes, $index);
+    }
+  }
+}
+
+.\!z-index {
+  @each $index in map_keys($indexes) {
+    &-#{$index} {
+      z-index: map_get($indexes, $index) !important;
+    }
+  }
+}

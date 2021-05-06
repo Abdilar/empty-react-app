@@ -1,0 +1,51 @@
+$label-colors: (
+  'default': (background: #f1f1f1, color: #666666),
+  'draft': (background: #d8eafc, color: #1e87f0),
+  'reject': (background: #fef4f6, color: #f0506e),
+  'pending': (background: #fff6ee, color: #faa05a),
+  'sent': (background: #b1f9df, color: #32bd89),
+  'accept': (background: #edfbf6, color: #32d296),
+  'approved': (background: #d7ffd2, color: #4ea243),
+  'denied': (background: #ffdee5, color: #bf3333)
+);
+
+@each $color in map_keys($label-colors) {
+  .label {
+    &__circle__#{$color} {
+      background: map_get(map_get($label-colors, $color), background);
+      color: map_get(map_get($label-colors, $color), color);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border-width: 2px;
+      border-style: solid;
+    }
+
+    &__rounded__#{$color} {
+      @extend .label__#{$color};
+      -webkit-border-radius: 10px !important;
+      -moz-border-radius: 10px !important;
+      border-radius: 10px !important;
+    }
+
+    &__#{$color} {
+      white-space: nowrap;
+      border-radius: 4px;
+      padding: 2px 5px;
+      font-size: 9px;
+      color: map_get(map_get($label-colors, $color), color);
+      background: map_get(map_get($label-colors, $color), background);
+      transition: background .2s ease-in-out;
+      &:hover {
+        background: darken(map_get(map_get($label-colors, $color), background), 3%);
+      }
+    }
+  }
+}
+
+.label__large {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+

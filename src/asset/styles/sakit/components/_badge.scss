@@ -1,0 +1,72 @@
+$badge-colors: (
+  default: #fff,
+  muted: #e8ecee,
+  primary: #1b67db,
+  secondary: #fcbd00
+);
+
+.badge {
+  position: absolute;
+  padding: 0 4.5px;
+  font-size: 9px;
+  border-radius: 50px;
+  z-index: 1;
+  min-width: 16px;
+  min-height: 16px;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+
+  &__top {
+    top: -6px;
+  }
+
+  &__left {
+    @extend .badge__top;
+    right: calc(100% - 8px);
+  }
+  &__right {
+    @extend .badge__top;
+    left: calc(100% - 8px);
+  }
+
+  @each $color in map_keys($badge-colors) {
+    &__#{$color}__left {
+      @extend .badge;
+      @extend .badge__left;
+      background-color: map_get($badge-colors, $color);
+      @if ($color == 'default') {
+        border: 1px solid #e8ecee;
+        color: #666;
+      }
+      @if ($color == 'muted') {
+        color: #666;
+      }
+      @if ($color != 'default' and $color != 'muted') {
+        color: #fff;
+      }
+    }
+  }
+
+  @each $color in map_keys($badge-colors) {
+    &__#{$color}__right {
+      @extend .badge;
+      @extend .badge__right;
+      background-color: map_get($badge-colors, $color);
+      @if ($color == 'default') {
+        border: 1px solid #e8ecee;
+        color: #666;
+      }
+      @if ($color == 'muted') {
+        color: #666;
+      }
+      @if ($color != 'default' and $color != 'muted') {
+        color: #fff;
+      }
+    }
+  }
+}
+
+

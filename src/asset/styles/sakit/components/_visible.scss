@@ -1,0 +1,77 @@
+@import "../mixins/responsive";
+
+.visible {
+  &\@xs {
+    @include screen-xsmall-lt {
+      display: none !important;
+    }
+  }
+
+  &\@s {
+    @include screen-small-lt {
+      display: none !important;
+    }
+  }
+
+  &\@m {
+    @include screen-medium-lt {
+      display: none !important;
+    }
+  }
+
+  &\@l {
+    @include screen-large-lt {
+      display: none !important;
+    }
+  }
+
+  &\@xl {
+    @include screen-xlarge-lt {
+      display: none !important;
+    }
+  }
+
+  &\@xxl {
+    @include screen-xxlarge-lt {
+      display: none !important;
+    }
+  }
+}
+
+.hidden {
+  &\@xs {
+    @include screen-xsmall {
+      display: none !important;
+    }
+  }
+
+  &\@s {
+    @include screen-small {
+      display: none !important;
+    }
+  }
+
+  &\@m {
+    @include screen-medium {
+      display: none !important;
+    }
+  }
+
+  &\@l {
+    @include screen-large {
+      display: none !important;
+    }
+  }
+
+  &\@xl {
+    @include screen-xlarge {
+      display: none !important;
+    }
+  }
+
+  &\@xxl {
+    @include screen-xxlarge {
+      display: none !important;
+    }
+  }
+}

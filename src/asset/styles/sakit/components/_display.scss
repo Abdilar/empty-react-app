@@ -1,0 +1,27 @@
+$displays: (
+  block,
+  flex,
+  grid,
+  tabel,
+  initial,
+  inline,
+  inline-block,
+  inline-flex,
+  none
+);
+
+.display {
+  @each $display in $displays {
+    &__#{$display} {
+      display: $display;
+    }
+  }
+}
+
+.\!display {
+  @each $display in $displays {
+    &__#{$display} {
+      display: $display !important;
+    }
+  }
+}

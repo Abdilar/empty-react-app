@@ -1,0 +1,105 @@
+@import "../variables/colors";
+
+$avatar-size: 55px;
+$avatar-color: #f0f0f0;
+
+$colors: (
+  default: #fff,
+  primary: $sakit-primary-color,
+  saecondary: $sakit-secondary-color,
+);
+
+.avatar {
+  position: relative;
+  width: $avatar-size;
+  height: $avatar-size;
+  overflow: hidden;
+  border-radius: $avatar-size;
+  background: $avatar-color;
+  border: 1px solid $avatar-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+
+  @each $color in map_keys($colors) {
+    &__#{$color} {
+      @if ($color != default) {
+        color: #fff !important;
+        border: none !important;
+      }
+      background: map_get($colors, $color) !important;
+    }
+  }
+
+  &__label {
+    background: rgba(40, 44, 52, 0.8);
+    color: rgba(#fff, .7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__xxlarge {
+    width: $avatar-size + 45px;
+    height: $avatar-size + 45px;
+
+    .avatar__label {
+      height: 30px;
+    }
+  }
+
+  &__xlarge {
+    width: $avatar-size + 30px;
+    height: $avatar-size + 30px;
+
+    .avatar__label {
+      height: 30px;
+    }
+  }
+
+  &__large {
+    width: $avatar-size + 15px;
+    height: $avatar-size + 15px;
+
+    .avatar__label {
+      height: 25px;
+    }
+  }
+
+  &__small {
+    width: $avatar-size - 15px;
+    height: $avatar-size - 15px;
+
+    .avatar__label {
+      height: 18px;
+    }
+  }
+
+  &__xsmall {
+    width: $avatar-size - 30px;
+    height: $avatar-size - 30px;
+
+    .avatar__label {
+      height: $avatar-size - 30px;
+    }
+  }
+}
+
+.avatar__label--hover {
+  .avatar__label {
+    cursor: pointer;
+    transform: translateY(40px);
+    transition: transform .2s ease-in-out;
+  }
+
+  &:hover > .avatar__label {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,9 @@
+.direction {
+  &__rtl {
+    direction: rtl;
+  }
+
+  &__ltr {
+    direction: ltr;
+  }
+}
