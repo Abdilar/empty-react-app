@@ -2,13 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import i18next from 'i18next';
 import moment from 'moment';
-import App from './App.js';
+import {App} from './App.js';
 import {PAGE} from './config/routes.config';
 import {ACCESS_TOKEN, APP_DIR, APP_LANGUAGE, APP_DEFAULT_LANGUAGE, IS_LOGGED_IN, REFRESH_TOKEN} from './config/variables.config';
-import {fetchConfigs} from './redux/action/general.action';
-import {store} from './redux/store';
 import reportWebVitals from './reportWebVitals';
-import {getAppLanguage, isEmptyArray, parseQuery, setAppDirection, setAppLanguage} from './utils/functions.util';
+import {getAppLanguage, setAppDirection, setAppLanguage} from './utils/functions.util';
 import history from './utils/history.util';
 import './utils/customIcons.util';
 import 'moment/locale/fa';
@@ -42,16 +40,12 @@ const loadDynamicStyles = async (dir) => {
 };
 
 const initProject = async () => {
-  await store.dispatch(fetchConfigs());
   setAppLanguage(APP_LANGUAGE, APP_DEFAULT_LANGUAGE);
   await loadDynamicScripts();
   const dir = i18next.dir(getAppLanguage());
   setAppDirection(APP_DIR, dir);
   await loadDynamicStyles(dir);
   moment.locale(getAppLanguage());
-
-
-  history.push(PAGE.ERROR);
   renderDOM();
 };
 

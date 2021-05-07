@@ -1,10 +1,10 @@
 import {Component} from 'react';
-import {HomeTemplate} from './Home.template';
+import {NotFoundTemplate} from './NotFound.template';
 
-class Error extends Component {
+class NotFound extends Component {
   render() {
-    return <HomeTemplate />;
+    return <NotFoundTemplate />;
   }
 }
 
-export default Error;
+export {NotFound};

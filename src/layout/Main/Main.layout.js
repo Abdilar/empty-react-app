@@ -1,7 +1,8 @@
-import {MainTemplate} from 'src/layout/Main/Main.template';
+import React from 'react';
+import {MainTemplate} from './Main.template';
 
 const MainLayout = (props) => {
   return <MainTemplate {...props}/>
 };
 
-export default MainLayout;
+export {MainLayout};

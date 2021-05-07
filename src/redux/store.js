@@ -9,7 +9,9 @@ const appReducer = (state, action) => {
 
 const composeEnhancers = (APP_ENVIRONMENT !== 'production' && typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
-export const store = createStore(
+const store = createStore(
   appReducer,
   composeEnhancers(applyMiddleware(ReduxThunk))
 );
+
+export {store}

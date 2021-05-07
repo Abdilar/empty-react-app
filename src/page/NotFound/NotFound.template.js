@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const HomeTemplate = (props) => (
+export const NotFoundTemplate = () => (
   <section>
-    <h1>Home</h1>
-    <p>This is a Home page</p>
+    <h1>Not found</h1>
+    <p>This is a Not found page</p>
   </section>
 )

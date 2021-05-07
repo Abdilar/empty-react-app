@@ -9,20 +9,22 @@ import {AppRouting} from './route/App.route';
 
 const App = () =>  {
   const {t} = useTranslation();
-  const title = t('app.defaultSiteName');
+  const description = t('app.defaultDescription');
+  const siteName = t('app.defaultSiteName');
+  const title = t('app.defaultTitle');
 
   return (
     <ReduxProvider store={store}>
       <Helmet>
-        <title>{title}</title>
+        <title>{siteName}</title>
         <link rel="icon" href="#" type="image/png"/>
         <meta property="og:url" content={window.location.hostname} />
-        <meta property="twitter:description" content={t('app.defaultDescription')} />
-        <meta property="og:description" content={t('app.defaultDescription')}/>
-        <meta name="description" content={t('app.defaultDescription')} />
-        <meta property="twitter:title" content={t('app.defaultTitle')} />
-        <meta property="og:site_name" content={title} />
-        <meta property="og:title" content={t('app.defaultTitle')} />
+        <meta property="twitter:description" content={description} />
+        <meta property="og:description" content={description}/>
+        <meta name="description" content={description} />
+        <meta property="twitter:title" content={title} />
+        <meta property="og:site_name" content={siteName} />
+        <meta property="og:title" content={title} />
       </Helmet>
       <AppRouting />
       <ToastContainer
