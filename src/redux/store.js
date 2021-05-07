@@ -13,5 +13,3 @@ export const store = createStore(
   appReducer,
   composeEnhancers(applyMiddleware(ReduxThunk))
 );
-
-export default store;

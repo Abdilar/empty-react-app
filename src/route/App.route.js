@@ -37,4 +37,4 @@ const AppRouting = () => (
   </Router>
 );
 
-export default AppRouting;
+export {AppRouting};
