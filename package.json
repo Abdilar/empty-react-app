@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "env-cmd": "^10.1.0",
     "history": "^4.10.1",
     "i18next": "^20.2.2",
     "i18next-xhr-backend": "^3.2.2",
@@ -27,8 +28,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "env-cmd -f ./src/environment/.env.development react-scripts start",
+    "build": "env-cmd -f ./src/environment/.env.production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
