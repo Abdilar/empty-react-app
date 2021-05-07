@@ -9,13 +9,13 @@ import {AppRouting} from './route/App.route';
 
 const App = () =>  {
   const {t} = useTranslation();
-  const title = t('app.defaultSiteName')};
+  const title = t('app.defaultSiteName');
 
   return (
     <ReduxProvider store={store}>
       <Helmet>
         <title>{title}</title>
-        <link rel="icon" href="" type="image/png"/>
+        <link rel="icon" href="#" type="image/png"/>
         <meta property="og:url" content={window.location.hostname} />
         <meta property="twitter:description" content={t('app.defaultDescription')} />
         <meta property="og:description" content={t('app.defaultDescription')}/>
@@ -39,6 +39,6 @@ const App = () =>  {
       />
     </ReduxProvider>
   )
-};
+}
 
 export {App};
