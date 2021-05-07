@@ -14,12 +14,14 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "react-i18next": "^11.8.15",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-toastify": "^7.0.4",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
+    "uikit": "^3.6.21",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
