@@ -6,7 +6,6 @@ export const APP_ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT || 'development
 export const APP_DEFAULT_LANGUAGE = process.env.REACT_APP_DEFAULT_LANGUAGE || 'en';
 export const APP_DIR = 'APP_DIR';
 export const APP_LANGUAGE = 'APP_LANGUAGE';
-export const APP_TOKEN = 'token';
 export const AXIOS_TIMEOUT = Number(process.env.REACT_APP_AXIOS_TIMEOUT) || 120000;
 export const BASE_URL = process.env.REACT_APP_BASE_URL;
 export const CONFIG = 'CONFIG';
