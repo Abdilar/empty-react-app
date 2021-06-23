@@ -29,7 +29,10 @@
   },
   "scripts": {
     "start": "env-cmd -f ./src/environment/.env.development react-scripts start",
-    "build": "env-cmd -f ./src/environment/.env.production react-scripts build",
+    "build": "npm run build:development",
+    "build:development": "env-cmd -f ./src/environment/.env.production react-scripts build",
+    "build:production": "GENERATE_SOURCEMAP=false env-cmd -f ./src/environment/.env.production craco build",
+    "build:stage": "GENERATE_SOURCEMAP=false env-cmd -f ./src/environment/.env.production craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -50,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.1.2"
   }
 }
