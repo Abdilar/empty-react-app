@@ -11,3 +11,4 @@ export const BASE_URL = process.env.REACT_APP_BASE_URL;
 export const CONFIG = 'CONFIG';
 export const IS_LOGGED_IN = 'IS_LOGGED_IN';
 export const REFRESH_TOKEN = 'REFRESH_TOKEN';
+export const SENTRY_URL = process.env.REACT_APP_SENTRY_URL;

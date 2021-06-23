@@ -2,9 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import i18next from 'i18next';
 import moment from 'moment';
+import * as Sentry from '@sentry/react';
+import {Integrations} from '@sentry/tracing';
 import {App} from './App.js';
 import {PAGE} from './config/routes.config';
-import {ACCESS_TOKEN, APP_DIR, APP_LANGUAGE, APP_DEFAULT_LANGUAGE, IS_LOGGED_IN, REFRESH_TOKEN} from './config/variables.config';
+import {
+  ACCESS_TOKEN,
+  APP_DIR,
+  APP_LANGUAGE,
+  APP_DEFAULT_LANGUAGE,
+  IS_LOGGED_IN,
+  REFRESH_TOKEN,
+  SENTRY_URL
+} from './config/variables.config';
 import reportWebVitals from './reportWebVitals';
 import {getAppLanguage, setAppDirection, setAppLanguage, toCamelCase} from './utils/functions.util';
 import packageJSON from '../package.json';
@@ -45,6 +55,15 @@ const setAppInfo = () => {
   window[appName] = {version: packageJSON.version};
 }
 
+const initialSentry = () => {
+  if (!SENTRY_URL) return;
+  Sentry.init({
+    dsn: SENTRY_URL,
+    integrations: [new Integrations.BrowserTracing()],
+    tracesSampleRate: 1.0,
+  });
+}
+
 const initProject = async () => {
   setAppLanguage(APP_LANGUAGE, APP_DEFAULT_LANGUAGE);
   await loadDynamicScripts();
@@ -58,6 +77,7 @@ const initProject = async () => {
 try {
   setAppInfo();
   resetApp();
+  initialSentry()
   initProject();
 } catch (e) {
   history.push(PAGE.ERROR);
