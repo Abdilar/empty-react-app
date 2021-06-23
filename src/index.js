@@ -6,7 +6,8 @@ import {App} from './App.js';
 import {PAGE} from './config/routes.config';
 import {ACCESS_TOKEN, APP_DIR, APP_LANGUAGE, APP_DEFAULT_LANGUAGE, IS_LOGGED_IN, REFRESH_TOKEN} from './config/variables.config';
 import reportWebVitals from './reportWebVitals';
-import {getAppLanguage, setAppDirection, setAppLanguage} from './utils/functions.util';
+import {getAppLanguage, setAppDirection, setAppLanguage, toCamelCase} from './utils/functions.util';
+import packageJSON from '../package.json';
 import history from './utils/history.util';
 import './utils/customIcons.util';
 import 'moment/locale/fa';
@@ -39,6 +40,11 @@ const loadDynamicStyles = async (dir) => {
   })();
 };
 
+const setAppInfo = () => {
+  const appName = toCamelCase(packageJSON.name, '-');
+  window[appName] = {version: packageJSON.version};
+}
+
 const initProject = async () => {
   setAppLanguage(APP_LANGUAGE, APP_DEFAULT_LANGUAGE);
   await loadDynamicScripts();
@@ -50,6 +56,7 @@ const initProject = async () => {
 };
 
 try {
+  setAppInfo();
   resetApp();
   initProject();
 } catch (e) {

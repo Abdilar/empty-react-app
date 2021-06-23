@@ -10,6 +10,14 @@ import {PAGE} from "../config/routes.config";
 import {BASE_URL} from "../config/variables.config";
 import history from '../utils/history.util';
 
+export function toCamelCase(value, separator = ' ') {
+  return value.split(separator).map((item, index) => {
+    return index ?
+      item.split('').reduce((acc, char, index) => index ? acc + char : char.toUpperCase() + acc, '') :
+      item;
+  }).join('')
+}
+
 /*
 * Show error toast message
 * @param {Object} error - The API error response
