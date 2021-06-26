@@ -1,6 +1,7 @@
 # Step 1
 
 FROM node:10-alpine as build-step
+RUN apk add g++ make python
 RUN mkdir /app
 WORKDIR /app
 COPY package.json /app
