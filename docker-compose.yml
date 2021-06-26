@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  empty_react_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: empty_react_app
+    env_file:
+      - src/environment/.env.development
+    ports:
+      - "3000:80/tcp"
+    volumes:
+      - '/app/node_modules'
