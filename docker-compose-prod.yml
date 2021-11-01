@@ -1,13 +1,13 @@
 version: '3.9'
 
 services:
-  empty_react_app:
+  seed:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: empty-react-app
+      dockerfile: docker/prod.Dockerfile
+    container_name: seed
     env_file:
-      - src/environment/.env.development
+      - src/environment/.env.production
     ports:
       - "3000:80/tcp"
     volumes:

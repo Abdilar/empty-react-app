@@ -3,9 +3,9 @@ import Helmet from 'react-helmet';
 import {useTranslation} from 'react-i18next';
 import {Provider as ReduxProvider} from 'react-redux';
 import {ToastContainer, toast, Slide} from 'react-toastify';
-import {AUTO_CLOSE_TIME, LIMIT} from './config/toast.config';
-import {store} from './redux/store';
-import {AppRouting} from './route/App.route';
+import {AUTO_CLOSE_TIME, LIMIT} from 'config/toast.config';
+import {store} from 'redux/store';
+import {AppRouting} from 'route/App.route';
 
 const App = () =>  {
   const {t} = useTranslation();

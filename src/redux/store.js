@@ -1,6 +1,6 @@
 import {applyMiddleware, createStore, compose} from 'redux';
 import ReduxThunk from 'redux-thunk';
-import {APP_ENVIRONMENT} from '../config/variables.config';
+import {APP_ENVIRONMENT} from 'config/variables.config';
 import RootReducer from './reducer/index';
 
 const appReducer = (state, action) => {

@@ -1,6 +1,6 @@
+import api from 'api/general.api';
+import {CONFIG} from 'config/variables.config';
 import * as types from '../types';
-import api from '../../api/general.api';
-import {CONFIG} from '../../config/variables.config';
 
 export const setConfigs = (configs) => ({type: types.GENERAL_SET_CONFIGS, data: configs})
 

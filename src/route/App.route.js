@@ -1,8 +1,8 @@
 import React from 'react';
 import {Redirect, Router, Switch} from 'react-router-dom';
-import {ROUTE_TYPE, STATIC_PATHS} from '../config/routes.config';
-import * as Page from '../page';
-import history from '../utils/history.util';
+import {ROUTE_TYPE, STATIC_PATHS} from 'config/routes.config';
+import * as Page from 'page';
+import history from 'utils/history.util';
 import * as Route from './components';
 
 const MAP_COMPONENT = {

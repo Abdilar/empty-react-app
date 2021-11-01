@@ -4,8 +4,8 @@ import i18next from 'i18next';
 import moment from 'moment';
 import * as Sentry from '@sentry/react';
 import {Integrations} from '@sentry/tracing';
-import {App} from './App.js';
-import {PAGE} from './config/routes.config';
+import {App} from 'App.js';
+import {PAGE} from 'config/routes.config';
 import {
   ACCESS_TOKEN,
   APP_DIR,
@@ -14,13 +14,13 @@ import {
   IS_LOGGED_IN,
   REFRESH_TOKEN,
   SENTRY_URL
-} from './config/variables.config';
-import reportWebVitals from './reportWebVitals';
-import {getAppLanguage, setAppDirection, setAppLanguage, toCamelCase} from './utils/functions.util';
-import packageJSON from '../package.json';
-import history from './utils/history.util';
-import './utils/customIcons.util';
+} from 'config/variables.config';
+import reportWebVitals from 'reportWebVitals';
+import {getAppLanguage, setAppDirection, setAppLanguage, toCamelCase} from 'utils/functions.util';
+import history from 'utils/history.util';
+import 'utils/customIcons.util';
 import 'moment/locale/fa';
+import packageJSON from '../package.json';
 
 const renderDOM = () => ReactDOM.render(<App/>, document.getElementById('root'));
 

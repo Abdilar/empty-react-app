@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  seed:
+    build:
+      context: .
+      dockerfile: docker/dev.Dockerfile
+    container_name: seed
+    env_file:
+      - src/environment/.env.development
+    ports:
+      - "3000:80/tcp"
+    volumes:
+      - '/app/node_modules'

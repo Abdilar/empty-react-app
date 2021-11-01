@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const HomeTemplate = () => (
   <section>
     <h1>Home</h1>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const NotFoundTemplate = () => (
   <section>
     <h1>Not found</h1>

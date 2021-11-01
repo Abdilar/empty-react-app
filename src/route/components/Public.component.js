@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {MainLayout} from '../../layout';
+import {MainLayout} from 'layout';
 
 const render = (props, Component) => {
   return props.layout ?
