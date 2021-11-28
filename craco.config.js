@@ -1,4 +1,5 @@
 const APP_VERSION = require('./package.json').version;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   webpack: {
@@ -6,7 +7,11 @@ module.exports = {
       const rules = webpackConfig.module.rules.filter(rule => !rule.oneOf);
       const oneOf = changeMediaNameing(webpackConfig);
       rules.push({oneOf});
-      changeCSSNameing(webpackConfig)
+      changeCSSNameing(webpackConfig);
+
+      const plugins = process.env.REACT_APP_ANALYSE_MODE === "true" ?
+        [ ...webpackConfig.plugins, new BundleAnalyzerPlugin()] :
+        [ ...webpackConfig.plugins]
 
 
       return {
@@ -19,7 +24,8 @@ module.exports = {
         module: {
           ...webpackConfig.module,
           rules
-        }
+        },
+        plugins
       };
     }
   },

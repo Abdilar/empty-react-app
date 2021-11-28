@@ -34,7 +34,7 @@
     "build": "npm run build:development",
     "build:development": "env-cmd -f ./src/environment/.env.production react-scripts build",
     "build:production": "GENERATE_SOURCEMAP=false env-cmd -f ./src/environment/.env.production craco build",
-    "build:stage": "GENERATE_SOURCEMAP=false env-cmd -f ./src/environment/.env.production craco build",
+    "build:stage": "GENERATE_SOURCEMAP=false env-cmd -f ./src/environment/.env.staging craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -57,6 +57,7 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^6.1.2"
+    "@craco/craco": "^6.1.2",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }
