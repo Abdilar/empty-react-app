@@ -18,7 +18,6 @@ import {
 import reportWebVitals from 'reportWebVitals';
 import {getAppLanguage, setAppDirection, setAppLanguage, toCamelCase} from 'utils/functions.util';
 import history from 'utils/history.util';
-import 'utils/customIcons.util';
 import 'moment/locale/fa';
 import packageJSON from '../package.json';
 
@@ -32,15 +31,11 @@ const resetApp = () => {
 
 const loadDynamicScripts = async () => {
   await (async () => {
-    return await import('./i18n')
+    return await import('./i18n');
   })();
 };
 
 const loadDynamicStyles = async (dir) => {
-  await (async () => {
-    return await import(`uikit/dist/css/uikit${dir === 'rtl' ? '-rtl' : ''}.min.css`);
-  })();
-
   await (async () => {
     return await import('react-toastify/dist/ReactToastify.css');
   })();
@@ -53,7 +48,7 @@ const loadDynamicStyles = async (dir) => {
 const setAppInfo = () => {
   const appName = toCamelCase(packageJSON.name, '-');
   window[appName] = {version: packageJSON.version};
-}
+};
 
 const initialSentry = () => {
   if (!SENTRY_URL) return;
@@ -62,7 +57,7 @@ const initialSentry = () => {
     integrations: [new Integrations.BrowserTracing()],
     tracesSampleRate: 1.0,
   });
-}
+};
 
 const initProject = async () => {
   setAppLanguage(APP_LANGUAGE, APP_DEFAULT_LANGUAGE);
@@ -77,7 +72,7 @@ const initProject = async () => {
 try {
   setAppInfo();
   resetApp();
-  initialSentry()
+  initialSentry();
   initProject();
 } catch (e) {
   history.push(PAGE.ERROR);

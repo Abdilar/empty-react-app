@@ -23,7 +23,6 @@
     "react-toastify": "^7.0.4",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
-    "uikit": "^3.6.21",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
