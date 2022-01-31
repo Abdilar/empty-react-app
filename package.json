@@ -31,8 +31,7 @@
     "build:development": "env-cmd -f ./src/environment/.env.production react-scripts build",
     "build:production": "GENERATE_SOURCEMAP=false env-cmd -f ./src/environment/.env.production craco build",
     "build:stage": "GENERATE_SOURCEMAP=false env-cmd -f ./src/environment/.env.staging craco build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
