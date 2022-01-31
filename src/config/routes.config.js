@@ -1,3 +1,4 @@
+import {LAYOUT} from 'config/layout.config';
 import * as Page from 'page';
 
 export const PATH = {
@@ -17,19 +18,23 @@ export const STATIC_PATHS = [
   {
     path: PATH.HOME,
     component: Page.Home,
-    layout: true,
+    layout: {
+      name: LAYOUT.PRIMARY
+    },
     routeType: ROUTE_TYPE.PUBLIC
   },
   {
     path: PATH.ERROR,
     component: Page.Error,
-    layout: false,
+    layout: null,
     routeType: ROUTE_TYPE.PUBLIC
   },
   {
     path: PATH.NOT_FOUND,
     component: Page.NotFound,
-    layout: false
+    layout: {
+      name: LAYOUT.SECONDARY
+    }
   },
   {
     path: '*',

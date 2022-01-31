@@ -1,0 +1,4 @@
+export const LAYOUT = {
+  PRIMARY: 'PRIMARY',
+  SECONDARY: 'SECONDARY'
+};
