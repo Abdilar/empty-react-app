@@ -6,7 +6,7 @@ import moment from 'moment';
 import {toast as toastify} from "react-toastify";
 import errorMessage from "../asset/data/error";
 import patterns from "../asset/data/pattern";
-import {PAGE} from "../config/routes.config";
+import {PATH} from "../config/routes.config";
 import {BASE_URL} from "../config/variables.config";
 import history from '../utils/history.util';
 
@@ -24,7 +24,7 @@ export function toCamelCase(value, separator = ' ') {
 * */
 export function errorHandler(err) {
   if (!navigator.onLine) {
-    history.push(PAGE.ERROR);
+    history.push(PATH.ERROR);
     toastify.error('Connection Failed, Please check your network connection');
   }
   else if (err.response && err.response.data) {

@@ -5,7 +5,7 @@ import moment from 'moment';
 import * as Sentry from '@sentry/react';
 import {Integrations} from '@sentry/tracing';
 import {App} from 'App.js';
-import {PAGE} from 'config/routes.config';
+import {PATH} from 'config/routes.config';
 import {
   ACCESS_TOKEN,
   APP_DIR,
@@ -35,7 +35,7 @@ const loadDynamicScripts = async () => {
   })();
 };
 
-const loadDynamicStyles = async (dir) => {
+const loadDynamicStyles = async () => {
   await (async () => {
     return await import('react-toastify/dist/ReactToastify.css');
   })();
@@ -75,7 +75,7 @@ try {
   initialSentry();
   initProject();
 } catch (e) {
-  history.push(PAGE.ERROR);
+  history.push(PATH.ERROR);
   renderDOM();
 }
 

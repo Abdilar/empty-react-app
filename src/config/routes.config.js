@@ -1,7 +1,9 @@
-export const PAGE = {
-  ERROR: 'error',
-  HOME: '',
-  NOT_FOUND: 'not-found'
+import * as Page from 'page';
+
+export const PATH = {
+  ERROR: '/error',
+  HOME: '/',
+  NOT_FOUND: '/not-found'
 };
 
 export const ROUTE_TYPE = {
@@ -13,20 +15,25 @@ export const ROUTE_TYPE = {
 
 export const STATIC_PATHS = [
   {
-    name: PAGE.HOME,
-    type: 'home',
+    path: PATH.HOME,
+    component: Page.Home,
     layout: true,
-    routeType: ROUTE_TYPE.PRIVATE
+    routeType: ROUTE_TYPE.PUBLIC
   },
   {
-    name: PAGE.ERROR,
-    type: 'error',
+    path: PATH.ERROR,
+    component: Page.Error,
     layout: false,
     routeType: ROUTE_TYPE.PUBLIC
   },
   {
-    name: PAGE.NOT_FOUND,
-    type: 'notFound',
-    layout: false,
+    path: PATH.NOT_FOUND,
+    component: Page.NotFound,
+    layout: false
+  },
+  {
+    path: '*',
+    routeType: ROUTE_TYPE.REDIRECT,
+    redirectPath: PATH.NOT_FOUND
   }
 ];
