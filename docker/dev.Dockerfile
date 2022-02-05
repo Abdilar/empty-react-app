@@ -12,3 +12,4 @@ RUN npm run build:development
 
 FROM nginx:1.17.1-alpine
 COPY --from=build-step /app/build /usr/share/nginx/html
+COPY --from=build-step /app/nginx.conf /etc/nginx
